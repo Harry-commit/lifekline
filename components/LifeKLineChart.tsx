@@ -32,7 +32,7 @@ const CustomTooltip = ({ active, payload }: any) => {
               大运：{data.daYun || '未知'}
             </p>
           </div>
-          <div className={`text-base font-bold px-2 py-1 rounded ${isUp ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+          <div className={`text-base font-bold px-2 py-1 rounded ${isUp ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'}`}>
             {isUp ? '吉 ▲' : '凶 ▼'}
           </div>
         </div>
@@ -72,8 +72,8 @@ const CandleShape = (props: any) => {
   const { x, y, width, height, payload, yAxis } = props;
 
   const isUp = payload.close >= payload.open;
-  const color = isUp ? '#22c55e' : '#ef4444'; // Green Up, Red Down
-  const strokeColor = isUp ? '#16a34a' : '#dc2626'; // Slightly darker for stroke
+  const color = isUp ? '#ef4444' : '#22c55e'; // Red Up, Green Down
+  const strokeColor = isUp ? '#dc2626' : '#16a34a'; // Slightly darker for stroke
   
   let highY = y;
   let lowY = y + height;
@@ -130,8 +130,8 @@ const LifeKLineChart: React.FC<LifeKLineChartProps> = ({ data }) => {
       <div className="mb-6 flex justify-between items-center px-2">
         <h3 className="text-xl font-bold text-gray-800 font-serif-sc">人生流年大运K线图</h3>
         <div className="flex gap-4 text-xs font-medium">
-           <span className="flex items-center text-green-700 bg-green-50 px-2 py-1 rounded"><div className="w-2 h-2 bg-green-500 mr-2 rounded-full"></div> 吉运 (涨)</span>
-           <span className="flex items-center text-red-700 bg-red-50 px-2 py-1 rounded"><div className="w-2 h-2 bg-red-500 mr-2 rounded-full"></div> 凶运 (跌)</span>
+           <span className="flex items-center text-red-700 bg-red-50 px-2 py-1 rounded"><div className="w-2 h-2 bg-red-500 mr-2 rounded-full"></div> 吉运 (涨)</span>
+           <span className="flex items-center text-green-700 bg-green-50 px-2 py-1 rounded"><div className="w-2 h-2 bg-green-500 mr-2 rounded-full"></div> 凶运 (跌)</span>
         </div>
       </div>
       

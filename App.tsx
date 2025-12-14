@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import BaziForm from './components/BaziForm';
 import LifeKLineChart from './components/LifeKLineChart';
@@ -53,7 +52,7 @@ const App: React.FC = () => {
           </div>
           <div className="flex items-center gap-6">
             <div className="hidden md:block text-sm text-gray-400 font-medium bg-gray-100 px-3 py-1 rounded-full">
-               基于 AI 大模型驱动 推特@0xSakura666
+               基于 AI 大模型驱动
             </div>
           </div>
         </div>
@@ -78,9 +77,9 @@ const App: React.FC = () => {
 
               {/* Tutorial Buttons Group */}
               <div className="flex flex-row gap-4 w-full max-w-lg mb-4">
-                {/* Usage Tutorial */}
-                <a 
-                  href="https://jcnjmxofi1yl.feishu.cn/wiki/OPa4woxiBiFP9okQ9yWcbcXpnEw"
+                {/* 八字排盘 - 直接跳转到第三方排盘页 */}
+                <a
+                  href="https://pcbz.iwzwh.com/#/paipan/index"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 flex items-center justify-center gap-2 bg-white px-4 py-3 rounded-xl shadow-sm border border-indigo-100 hover:border-indigo-500 hover:shadow-md transition-all transform hover:-translate-y-0.5 group"
@@ -88,22 +87,16 @@ const App: React.FC = () => {
                   <div className="bg-indigo-50 p-1.5 rounded-full text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
                     <BookOpen className="w-4 h-4" />
                   </div>
-                  <span className="text-base font-bold text-gray-800 group-hover:text-indigo-700 transition-colors">使用教程</span>
+                  <span className="text-base font-bold text-gray-800 group-hover:text-indigo-700 transition-colors">八字排盘</span>
                 </a>
 
-                {/* API Tutorial */}
-                <a 
-                  href="https://jcnjmxofi1yl.feishu.cn/wiki/JX0iwzoeqie3GEkJ8XQcMesan3c"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 bg-white px-4 py-3 rounded-xl shadow-sm border border-emerald-100 hover:border-emerald-500 hover:shadow-md transition-all transform hover:-translate-y-0.5 group"
-                >
-                  <div className="bg-emerald-50 p-1.5 rounded-full text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
-                    <Key className="w-4 h-4" />
-                  </div>
-                  <span className="text-base font-bold text-gray-800 group-hover:text-emerald-700 transition-colors">API教程</span>
-                </a>
+                {/* API 教程按钮已移除 */}
               </div>
+
+              {/* 说明文字 */}
+              <p className="text-sm text-gray-600 text-center max-w-lg leading-relaxed mt-4">
+                <span className="font-bold text-gray-800">说明：</span>为了避免 AI 排的八字不准确，请进入第三方专业排盘软件排盘，后手动填入，以确保准确性。
+              </p>
             </div>
             
             <BaziForm onSubmit={handleFormSubmit} isLoading={loading} />
@@ -140,8 +133,8 @@ const App: React.FC = () => {
                  流年大运走势图 (100年)
               </h3>
               <p className="text-sm text-gray-500 mb-2">
-                <span className="text-green-600 font-bold">绿色K线</span> 代表运势上涨（吉），
-                <span className="text-red-600 font-bold">红色K线</span> 代表运势下跌（凶）。
+                <span className="text-green-600 font-bold">绿色K线</span> 代表运势下跌（凶），
+                <span className="text-red-600 font-bold">红色K线</span> 代表运势上涨（吉）。
                 (点击K线查看流年详批)
               </p>
               <LifeKLineChart data={result.chartData} />
@@ -158,7 +151,7 @@ const App: React.FC = () => {
       {/* Footer */}
       <footer className="w-full bg-gray-900 text-gray-400 py-8 mt-auto">
         <div className="max-w-7xl mx-auto px-4 text-center text-sm">
-          <p>&copy; {new Date().getFullYear()} 人生K线项目 推特@0xSakura666 | 仅供娱乐与文化研究，请勿迷信</p>
+          <p>&copy; {new Date().getFullYear()} 人生K线项目 | 仅供娱乐与文化研究，请勿迷信</p>
         </div>
       </footer>
     </div>
